@@ -1,4 +1,4 @@
-//dynamic memory allocation and more
+//dynamic memory allocation and some other basic concepts
 #include<iostream>
 using namespace std;
 
