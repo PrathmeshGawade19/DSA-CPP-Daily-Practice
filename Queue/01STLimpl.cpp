@@ -16,6 +16,7 @@ void isEmpty(queue<int> q){
 int main(){
     queue<int> q;
 
+    //push operation from rear side (rear pointer) of queue and rear pointer gets incremented by 1
     q.push(10);
     q.push(20);
     q.push(30);
@@ -28,6 +29,7 @@ int main(){
     cout<<"the front ele of the queue is : "<<q.front()<<endl;
     cout<<"the back ele of the queue is : "<<q.back()<<endl;
 
+    //pop operation from front side (front pointer) of queue and front pointer gets incremented by 1
     q.pop();
 
     cout<<"the front ele of the queue is : "<<q.front()<<endl;
