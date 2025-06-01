@@ -20,15 +20,7 @@ class Queue{
     }
 
     //methods
-    bool empty(){
-        if(front == rear){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
+    //push operation
     void enqueue(int data){
         if(rear == size){
             cout<<"cannot enqueue as queue is full"<<endl;
@@ -39,11 +31,11 @@ class Queue{
         }
     }
 
-    int dequeue(){
+    //pop operation
+    void dequeue(){
         if(front == rear){
-            return -1;
+            cout<<"the queue is empty"<<endl;
         }
-
         else{
             int ans = arr[front];
             arr[front] = -1;
@@ -52,46 +44,76 @@ class Queue{
                 front = 0;
                 rear = 0;
             }
-            return ans;
+            cout<<"the ele dequed is : "<<ans<<endl;
         }
     }
 
+    //empty or not
+    void empty(){
+        if(front == rear){
+            cout<<"queue is empty"<<endl;
+        }
+        else{
+            cout<<"queue is non-empty"<<endl;
+        }
+    }
+
+    //full or not
+    void full(){
+        if(rear == size){
+            cout<<"queue is full"<<endl;
+        }
+        else{
+            cout<<"queue is not full"<<endl;
+        }
+    }
+
+    //front ele of queue
     int frontEle(){
         if(front == rear){
-            return -1;
+            cout<<"no front ele as queue is empty"<<endl;
         }
         else{
-            return arr[front];
+            cout<<"front ele of queue is :"<<arr[front]<<endl;
         }
     }
 
+    //back ele of queue
     int backEle(){
         if(front == rear){
-            return -1;
+            cout<<"no back ele as queue is empty"<<endl;
         }
         else{
-            return arr[rear-1];
+            cout<<"front ele of queue is :"<<arr[rear-1]<<endl;
         }
     }
-    
+  
 };
 
 int main(){
     Queue q1;
 
-    q1.enqueue(10);
-    q1.enqueue(20);
-    q1.enqueue(30);
-    q1.enqueue(40);
-    q1.enqueue(50);
-    // q1.enqueue(60);
+    q1.enqueue(5);
+    q1.enqueue(3);
+    q1.enqueue(2);
+    q1.enqueue(1);
+    q1.enqueue(4);
 
+    q1.empty();
+    q1.full();
+    q1.frontEle();
+    q1.backEle();
 
-    bool ans = q1.empty();
-    cout<<ans<<endl;
+    q1.dequeue();
+    q1.dequeue();
+    q1.dequeue();
+    q1.dequeue();
+    q1.dequeue();
 
-    int backans = q1.backEle();
-    cout<<backans<<endl;
-
+    q1.empty();
+    q1.full();
+    q1.frontEle();
+    q1.backEle();
+    
     return 0;
 }
