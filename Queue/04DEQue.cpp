@@ -1,3 +1,6 @@
+//Doubly Ended Queue 
+//Here push and pop operation can be done through front and rear both
+
 #include<iostream>
 using namespace std;
 
@@ -25,7 +28,7 @@ class doublyEndedQueue{
     }
 
     int isFull(){
-        if((front == 0 && rear == size-1) || (front != 0 && rear == (front-1)%(size-1))){
+        if((front == 0 && rear == size-1) || (front != 0 && rear == (front-1)%(size))){
             return 1;
         }
         else{
