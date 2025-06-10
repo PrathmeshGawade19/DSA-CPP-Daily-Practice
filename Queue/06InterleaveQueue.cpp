@@ -2,16 +2,22 @@
 
 #include<iostream>
 #include<queue>
+#include<stack>
 using namespace std;
 
 int main(){
     queue<int> q;
-    q.push(1);
-    q.push(2);
-    q.push(3);
-    q.push(4);
-    int n = q.size();
+    q.push(11);
+    q.push(12);
+    q.push(13);
+    q.push(14);
+    q.push(15);
+    q.push(16);
+    q.push(17);
+    q.push(18);
 
+    int n = q.size();
+    /*
     // approach 1 - using queue
     queue<int> newq;
     
@@ -39,4 +45,54 @@ int main(){
     }
 
     return 0;
+    */
+
+    //approach 2 - using stack 
+    stack<int> s;
+    int i=0;
+    while(i<n/2){
+        int value = q.front();
+        q.pop();
+        s.push(value);
+        i++;
+    }
+    
+    while(!s.empty()){
+        int value = s.top();
+        s.pop();
+        q.push(value);
+    }
+
+    i=0;
+    while(i<n/2){
+        int value = q.front();
+        q.pop();
+        q.push(value);
+        i++;
+    }
+
+    i=0;
+    while(i<n/2){
+        int value = q.front();
+        q.pop();
+        s.push(value);
+        i++;
+    }
+
+    while(!s.empty()){
+        int value = s.top();
+        s.pop();
+        q.push(value);
+        value = q.front();
+        q.pop();
+        q.push(value);
+    }
+
+    cout<<"size of q is : "<<q.size()<<endl;
+    cout<<"the interleaved queue is as follows : ";
+    while(!q.empty()){
+        cout<<q.front()<<" ";
+        q.pop();
+    }
+
 }
