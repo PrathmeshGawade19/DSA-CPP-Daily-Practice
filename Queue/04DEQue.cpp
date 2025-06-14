@@ -1,4 +1,5 @@
-//Doubly Ended Queue 
+//Doubly Ended Queue
+//circular array-based deque implementation
 //Here push and pop operation can be done through front and rear both
 
 #include<iostream>
